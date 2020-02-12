@@ -167,6 +167,8 @@ Arduboy arduboy;
 // ball position
 int x = WIDTH / 2;
 int y = HEIGHT / 2;
+int radius = 10;
+bool filled = false;
 
 void setup() {
   arduboy.begin();
@@ -174,31 +176,43 @@ void setup() {
 }
 
 void update() {
-  if (arduboy.pressed(RIGHT_BUTTON) && (x < WIDTH)) {
+  if (arduboy.pressed(RIGHT_BUTTON) && (x < (WIDTH - radius))) {
     x++;
   }
 
-  if (arduboy.pressed(LEFT_BUTTON) && (x > 0)) {
+  if (arduboy.pressed(LEFT_BUTTON) && (x >= radius)) {
     x--;
   }
 
-  if ((arduboy.pressed(UP_BUTTON)) {
+  if (arduboy.pressed(DOWN_BUTTON) && (y < (HEIGHT - radius))) {
+    y++;
+  }
+
+  if (arduboy.pressed(UP_BUTTON) && (y >= radius)) {
     y--;
   }
 
-  if ((arduboy.pressed(DOWN_BUTTON)) {
-    y++;
+  if (arduboy.pressed(A_BUTTON) && filled) {
+    filled = false;
+  }
+  if (arduboy.pressed(B_BUTTON) && !filled) {
+    filled = true;
   }
 }
 
 void draw() {
   // draw your entities here
-  arduboy.drawRect(x, y, 5, 9, 0xFF);
+  if (filled) {
+    arduboy.fillCircle(x, y, radius, 0xFF);
+  } else {
+    arduboy.drawCircle(x, y, radius, 0xFF);
+  }
 }
 
 void loop() {
   if (!(arduboy.nextFrame()))
     return;
+    
   update();
   arduboy.clear();
   draw();
