@@ -163,6 +163,14 @@ you can check the state of a button with the following functions:
 - [boolean notPressed(uint8_t buttons);
 ](https://github.com/Arduboy/Arduboy/blob/3c409fefbb8b9c1d71c24070a33389d0b56f1333/src/Arduboy.h#L50)
 
+Buttons are:
+- LEFT_BUTTON
+- RIGHT_BUTTON
+- UP_BUTTON
+- DOWN_BUTTON
+- A_BUTTON
+- B_BUTTON
+
 ```c++
 #include "Arduboy.h"
 
