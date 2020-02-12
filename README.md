@@ -75,7 +75,7 @@ void loop() {
 }
  ```
  
- Try to upload this code to your Arduboy by clicking on this icon ![alt text][./img/upload_button.png].
+ Try to upload this code to your Arduboy by clicking on this icon  ![alt text](./img/upload_button.png).
  you must be able to read "Hello World" on your screen; if not call an **Assistant**
  
  ## First Draw Something
@@ -149,12 +149,63 @@ void draw() {
 void loop() {
   if (!(arduboy.nextFrame()))
     return;
-
+  
+  update();
   arduboy.clear();
   draw();
   arduboy.display();
 }
 ```
+
+## Handle buttons
+
+```c++
+#include "Arduboy.h"
+
+Arduboy arduboy;
+
+// ball position
+int x = WIDTH / 2;
+int y = HEIGHT / 2;
+
+void setup() {
+  arduboy.begin();
+  arduboy.setFrameRate(60);
+}
+
+void update() {
+  if (arduboy.pressed(RIGHT_BUTTON) && (x < WIDTH)) {
+    x++;
+  }
+
+  if (arduboy.pressed(LEFT_BUTTON) && (x > 0)) {
+    x--;
+  }
+
+  if ((arduboy.pressed(UP_BUTTON)) {
+    y--;
+  }
+
+  if ((arduboy.pressed(DOWN_BUTTON)) {
+    y++;
+  }
+}
+
+void draw() {
+  // draw your entities here
+  arduboy.drawRect(x, y, 5, 9, 0xFF);
+}
+
+void loop() {
+  if (!(arduboy.nextFrame()))
+    return;
+  update();
+  arduboy.clear();
+  draw();
+  arduboy.display();
+}
+```
+
 
 ## Make your own game
 
