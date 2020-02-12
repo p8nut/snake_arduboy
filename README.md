@@ -8,7 +8,7 @@
 
 ## Setup the tools
 
-Install the arduino IDE and follow the steps from the `Arduboy homemade package` repository.
+Install the `Arduino IDE` and follow the steps from the `Arduboy homemade package` repository.
 
 ## Upload Configuration
 
