@@ -158,6 +158,10 @@ void loop() {
 ```
 
 ## Handle buttons
+you can check the state of a button with the following functions:
+- [boolean pressed(uint8_t buttons);](https://github.com/Arduboy/Arduboy/blob/3c409fefbb8b9c1d71c24070a33389d0b56f1333/src/Arduboy.h#L44)
+- [boolean notPressed(uint8_t buttons);
+](https://github.com/Arduboy/Arduboy/blob/3c409fefbb8b9c1d71c24070a33389d0b56f1333/src/Arduboy.h#L50)
 
 ```c++
 #include "Arduboy.h"
