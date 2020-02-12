@@ -231,7 +231,10 @@ void loop() {
   arduboy.display();
 }
 ```
+## Build the Head
 
+Now let's try to make a head move in the right direction.
+try to make it stop if it hit a border so that it never get out of the board.
 
 ## Make your own game
 
