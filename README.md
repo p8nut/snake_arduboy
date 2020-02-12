@@ -75,7 +75,7 @@ void loop() {
 }
  ```
  
- Try to upload this code to your Arduboy.
+ Try to upload this code to your Arduboy by clicking on this icon ![alt text][./img/upload_button.png].
  you must be able to read "Hello World" on your screen; if not call an **Assistant**
  
  ## First Draw Something
@@ -104,6 +104,7 @@ void setup() {
 
 void draw() {
   // draw function code here
+  // arduboy.drawRect(10, 10, 5, 9, 0xFF);
 }
 
 void loop() {
