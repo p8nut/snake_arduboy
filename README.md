@@ -80,10 +80,19 @@ void loop() {
  
  ## First Draw Something
  
- in the [Arduboy header]()
+ in the [Arduboy header](https://github.com/Arduboy/Arduboy/blob/master/src/Arduboy.h) you can find some functions that will help you to draw on the screen like:
+ - [void drawPixel(int x, int y, uint8_t color);](https://github.com/Arduboy/Arduboy/blob/3c409fefbb8b9c1d71c24070a33389d0b56f1333/src/Arduboy.h#L78)
+ - [void drawCircle(int16_t x0, int16_t y0, uint8_t r, uint8_t color);](https://github.com/Arduboy/Arduboy/blob/3c409fefbb8b9c1d71c24070a33389d0b56f1333/src/Arduboy.h#L86)
+ - [void drawLine(int16_t x0, int16_t y0, int16_t x1, int16_t y1, uint8_t color);](https://github.com/Arduboy/Arduboy/blob/3c409fefbb8b9c1d71c24070a33389d0b56f1333/src/Arduboy.h#L101)
+ - [void drawRect(int16_t x, int16_t y, uint8_t w, uint8_t h, uint8_t color);](https://github.com/Arduboy/Arduboy/blob/3c409fefbb8b9c1d71c24070a33389d0b56f1333/src/Arduboy.h#L104)
+ - [void drawRoundRect(int16_t x, int16_t y, uint8_t w, uint8_t h, uint8_t r, uint8_t color);](https://github.com/Arduboy/Arduboy/blob/3c409fefbb8b9c1d71c24070a33389d0b56f1333/src/Arduboy.h#L119)
+ - [void drawTriangle(int16_t x0, int16_t y0, int16_t x1, int16_t y1, int16_t x2, int16_t y2, uint8_t color);](https://github.com/Arduboy/Arduboy/blob/3c409fefbb8b9c1d71c24070a33389d0b56f1333/src/Arduboy.h#L125)
+ - [void drawBitmap(int16_t x, int16_t y, const uint8_t *bitmap, uint8_t w, uint8_t h, uint8_t color);](https://github.com/Arduboy/Arduboy/blob/3c409fefbb8b9c1d71c24070a33389d0b56f1333/src/Arduboy.h#L131)
+ - [void drawChar(int16_t x, int16_t y, unsigned char c, uint8_t color, uint8_t bg, uint8_t size);](https://github.com/Arduboy/Arduboy/blob/3c409fefbb8b9c1d71c24070a33389d0b56f1333/src/Arduboy.h#L143)
+
+Please try them with the following template (edit only the **draw** function). 
  
- 
- ```c++
+```c++
 #include "Arduboy.h"
 
 Arduboy arduboy;
@@ -94,8 +103,7 @@ void setup() {
 }
 
 void draw() {
-  arduboy.setCursor(4, 9);
-  arduboy.print(F("Hello, world!"));
+  // draw function code here
 }
 
 void loop() {
@@ -107,3 +115,48 @@ void loop() {
   arduboy.display();
 }
 ```
+## Make it Move
+
+From now on you can display some shape on the screen !
+
+But there are still not moving ... Which is sad ...
+Let's try to make them move.
+
+Draw a shape and make it bounce on the border of the screen. you can use the varaibles **HEIGHT** and **WIDTH** to get the size of the screen.
+
+Do not forget that you can use **globals variables** to save the positions of your objects entities.
+
+```c++
+#include "Arduboy.h"
+
+Arduboy arduboy;
+// save your entities positions here
+
+void setup() {
+  arduboy.begin();
+  arduboy.setFrameRate(60);
+}
+
+void update() {
+  // move entities here
+}
+
+void draw() {
+  // draw your entities here
+}
+
+void loop() {
+  if (!(arduboy.nextFrame()))
+    return;
+
+  arduboy.clear();
+  draw();
+  arduboy.display();
+}
+```
+
+## Make your own game
+
+From now on you should be able to code any basic game with Adruboy !
+
+ **HAVE FUN**
