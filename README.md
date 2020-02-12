@@ -123,7 +123,7 @@ From now on you can display some shape on the screen !
 But there are still not moving ... Which is sad ...
 Let's try to make them move.
 
-Draw a shape and make it bounce on the border of the screen. you can use the varaibles **HEIGHT** and **WIDTH** to get the size of the screen.
+Draw a shape and make it bounce on the border of the screen. you can use the global variables **HEIGHT** and **WIDTH** to get the size of the screen.
 
 Do not forget that you can use **globals variables** to save the positions of your objects entities.
 
