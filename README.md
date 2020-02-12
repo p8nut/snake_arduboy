@@ -235,6 +235,6 @@ void loop() {
 
 ## Make your own game
 
-From now on you should be able to code any basic game with Adruboy !
+From now on you should be able to code any basic game with Arduboy !
 
  **HAVE FUN**
